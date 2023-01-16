@@ -12,7 +12,7 @@ $plain_text_password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto
 $password = $plain_text_password
 
 # create the HTTP Basic Authorization header
-$pair = $parameters.username + ":" + $parameters.password
+$pair = $username + ":" + $password
 $bytes = [System.Text.Encoding]::ASCII.GetBytes($pair)
 $base64 = [System.Convert]::ToBase64String($bytes)
 $basicAuthValue = "Basic $base64"
