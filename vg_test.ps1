@@ -29,20 +29,6 @@ $headers = @{
 # Define the base URI for the API
 $baseUri = 'https://192.168.1.7:9440/PrismGateway/services/rest/v2.0'
 
-# Define the credentials for the OAuth2 token
-$username = 'admin'
-$password = 'nx2Tech001!'
-
-# Get the OAuth2 token
-$tokenResponse = Invoke-RestMethod -Uri 'https://any_cvm_ip:9440/api/oauth2/token' -Method POST -Body @{
-    'grant_type'='password'
-    'username'=$username
-    'password'=$password
-}
-
-# Extract the token from the response
-$token = $tokenResponse.access_token
-
 # Specify the UUID of the source volume group
 $uuid = '12345678-1234-1234-1234-123456789abc'
 
